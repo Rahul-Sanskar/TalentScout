@@ -329,3 +329,28 @@ def assess_confidence_level(evaluation_scores, answers, conversation):
             reasoning += "\nNote: Some inconsistencies found between resume and provided information."
         
     return final_confidence, decision, need_more_questions, focus_areas, reasoning
+
+def determine_focus_areas(evaluation_scores, answers):
+    """Helper function to determine areas needing more investigation"""
+    focus_areas = []
+    
+    # Analyze answer patterns
+    low_score_topics = []
+    for question, score in evaluation_scores.items():
+        if score < 0.7:
+            # Extract key technical terms from the question
+            question_lower = question.lower()
+            technical_terms = extract_technical_terms(question_lower)
+            low_score_topics.extend(technical_terms)
+    
+    # Identify most common weak areas
+    if low_score_topics:
+        from collections import Counter
+        topic_counts = Counter(low_score_topics)
+        focus_areas = [topic for topic, count in topic_counts.most_common(3)]
+    
+    # Add general areas if specific topics aren't clear
+    if not focus_areas:
+        focus_areas = ["problem-solving", "technical depth", "implementation details"]
+    
+    return focus_areas
