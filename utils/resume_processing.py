@@ -5,6 +5,20 @@ import io
 import streamlit as st
 from config.settings import CONFIDENCE_THRESHOLDS
 
+def generate_motivation_message(resume_analysis_results):
+    """Generate personalized motivation based on resume analysis"""
+    consistency_score = resume_analysis_results.get('consistency_score', 0)
+    strengths = resume_analysis_results.get('strengths', [])
+    
+    # Craft personalized motivation
+    if consistency_score >= 0.8 and strengths:
+        message = f"Your experience in {strengths[0]} stands out. Let's showcase your expertise!"
+    elif consistency_score >= 0.6:
+        message = "Your background shows promise. This assessment will highlight your potential."
+    else:
+        message = "Every question is an opportunity to demonstrate your capabilities!"
+    
+    return message
 
 def extract_text_from_resume(uploaded_file):
     """Extract text from PDF or DOCX resume"""
