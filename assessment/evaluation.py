@@ -354,3 +354,14 @@ def determine_focus_areas(evaluation_scores, answers):
         focus_areas = ["problem-solving", "technical depth", "implementation details"]
     
     return focus_areas
+
+def extract_technical_terms(text):
+    """Helper function to extract technical terms from text"""
+    common_tech_terms = {
+        'algorithm', 'data structure', 'optimization', 'complexity',
+        'database', 'architecture', 'design pattern', 'api',
+        'performance', 'scalability', 'security', 'testing',
+        'debugging', 'implementation', 'framework', 'library'
+    }
+    
+    return [term for term in common_tech_terms if term in text]
