@@ -80,3 +80,28 @@ class LLMManager:
     def clear_cache(cls):
         """Clear all cached LLM instances"""
         cls._instances.clear()
+
+
+def determine_optimal_persona(candidate_info):
+            if not candidate_info:
+                return 'Default'
+            
+            years_exp = candidate_info.get('Years of Experience', 0)
+            position = candidate_info.get('Desired Position', '').lower()
+            tech_stack = candidate_info.get('Tech Stack', [])
+            
+            # Senior/Architect positions or 8+ years experience get Expert persona
+            if years_exp >= 8 or any(role in position for role in ['senior', 'lead', 'architect', 'principal']):
+                return 'Expert'
+            
+            # Research/Innovation roles or complex tech stack get Analytical persona
+            if any(role in position for role in ['research', 'data', 'ml', 'ai']) or \
+               any(tech in ['machine learning', 'ai', 'data science'] for tech in tech_stack):
+                return 'Analytical'
+            
+            # Design/UI/Creative roles get Creative persona
+            if any(role in position for role in ['design', 'ui', 'ux', 'frontend', 'creative']):
+                return 'Creative'
+            
+            # Default for other cases
+            return 'Default'
