@@ -4,6 +4,21 @@ from config.settings import CONFIDENCE_THRESHOLDS
 def create_progress_container():
     """Creates a container for progress metrics that can be updated dynamically"""
     return st.empty()
+    
+def get_display_metrics(is_admin_view=False):
+    """
+    Determines which metrics to display based on user type.
+    Returns a dictionary of metrics that should be visible.
+    """
+    metrics = {
+        "questions_asked": st.session_state.questions_asked,
+    }
+    
+    if is_admin_view and 'confidence_level' in st.session_state:
+        metrics["confidence_level"] = st.session_state.confidence_level
+        metrics["current_decision"] = st.session_state.get('current_decision', 'In Progress')
+    
+    return metrics
 
 def update_assessment_progress(container, is_admin_view=False):
     """
