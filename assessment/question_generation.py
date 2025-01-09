@@ -1,5 +1,6 @@
 import streamlit as st
 from langchain.chains import ConversationChain
+import re
 
 # Function to generate technical questions
 def generate_technical_questions(tech_stack, conversation):
