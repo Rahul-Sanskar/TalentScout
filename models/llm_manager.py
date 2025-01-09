@@ -3,6 +3,10 @@
 from langchain_groq import ChatGroq
 from typing import Optional, Dict, Any
 import streamlit as st
+from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain.chains import ConversationChain
+from langchain.chains.conversation.memory import ConversationBufferWindowMemory
+from config.settings import CONFIDENCE_THRESHOLDS
 
 class LLMManager:
     """
