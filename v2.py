@@ -10,7 +10,7 @@ import re
 import PyPDF2
 import docx
 import io
-from llm.llm_manager import LLMManager
+from models.llm_manager import LLMManager
 
 # Initialize Streamlit page configuration
 st.set_page_config(
