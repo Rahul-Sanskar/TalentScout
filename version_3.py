@@ -112,6 +112,9 @@ def main():
     render_sidebar(current_stage, resume_analysis)
     
     st.title('TalentScout Hiring Assistant 💼')
+    #greetings message
+    st.markdown("Welcome to TalentScout Hiring Assistant! 🤖")
+    st.markdown("You call yourself a techie? Let's see then. 😏")
 
     # Initialize LangChain components with automated persona selection
     try:
