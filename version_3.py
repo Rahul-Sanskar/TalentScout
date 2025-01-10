@@ -1,18 +1,3 @@
-# import streamlit as st
-# from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
-# from langchain.chains import ConversationChain
-# from langchain.chains.conversation.memory import ConversationBufferWindowMemory
-# from langchain_groq import ChatGroq
-# from datetime import datetime
-# import os
-# import json
-# import re
-# import PyPDF2
-# import docx
-# import io
-# from models.llm_manager import LLMManager
-
-
 import streamlit as st
 from config.settings import CONFIDENCE_THRESHOLDS, CONVERSATION_MEMORY_LENGTH
 from utils.validators import validate_email, validate_phone, validate_tech_stack
