@@ -246,6 +246,7 @@ project/
     ```bash
     echo "GROQ_API_KEY=your_api_key" > .streamlit/secrets.toml
     ```
+    Get your Groq api key from https://console.groq.com/playground and replace `your_api_key` with it.
 5. **Run the Application**  
     ```bash
     streamlit run main.py
