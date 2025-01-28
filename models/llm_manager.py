@@ -71,7 +71,8 @@ class LLMManager:
             # Create new instance with provided configuration
             llm = ChatGroq(
                 api_key=st.secrets["GROQ_API_KEY"],
-                model_name='llama-3.3-70b-versatile',
+                # model_name='llama-3.3-70b-versatile',
+                model_name="deepseek-r1-distill-llama-70b",
                 **config
             )
             cls._instances[cache_key] = llm
