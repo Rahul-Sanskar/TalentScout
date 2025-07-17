@@ -249,5 +249,7 @@ MIT License © 2025 TalentScout AI Team
 * Open Source Contributors
 
 Live Demo: https://drive.google.com/file/d/1TKQ0YPOhV2Q6dIWfPU8CuK3uaZPDJGgX/view?usp=drive_link 
+
 GitHub Repo: https://github.com/Rahul-Sanskar/TalentScout 
+
 Streamlit: https://talentscout-qltp4z2dmudcy5bc8fxcmw.streamlit.app/ 
