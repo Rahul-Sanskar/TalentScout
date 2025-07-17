@@ -99,7 +99,7 @@ def main():
     st.title('TalentScout Hiring Assistant 💼')
     #greetings message
     st.markdown("Welcome to TalentScout Hiring Assistant! 🤖")
-    st.markdown("You call yourself a techie? Let's see then. 😏")
+    st.markdown("Please fill in the following information to get started.")
 
     # Initialize LangChain components with automated persona selection
     try:
